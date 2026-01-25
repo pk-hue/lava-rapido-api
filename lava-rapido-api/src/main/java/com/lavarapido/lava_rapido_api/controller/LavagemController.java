@@ -24,5 +24,6 @@ public class LavagemController {
     public ResponseEntity<Lavagem> cadastrar(@RequestParam Long carroId ,@RequestParam TipoLavagem tipoLavagem) {
         Lavagem lavagem = lavagemService.cadastrar(carroId, tipoLavagem);
         return ResponseEntity.status(HttpStatus.CREATED).body(lavagem);
+        
     }
 }

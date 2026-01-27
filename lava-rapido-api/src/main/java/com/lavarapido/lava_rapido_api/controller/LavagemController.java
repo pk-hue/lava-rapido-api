@@ -21,9 +21,8 @@ public class LavagemController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Lavagem> cadastrar(@RequestParam Long carroId ,@RequestParam TipoLavagem tipoLavagem) {
+    public ResponseEntity<Lavagem> cadastrar(@RequestParam Long carroId ,@RequestParam(name = "tipo") TipoLavagem tipoLavagem) {
         Lavagem lavagem = lavagemService.cadastrar(carroId, tipoLavagem);
         return ResponseEntity.status(HttpStatus.CREATED).body(lavagem);
-        
     }
 }

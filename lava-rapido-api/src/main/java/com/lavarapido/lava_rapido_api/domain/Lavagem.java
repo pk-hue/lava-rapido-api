@@ -11,6 +11,7 @@ public class Lavagem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "lavagem_id")
     private Long id;
 
     @Enumerated(EnumType.STRING)

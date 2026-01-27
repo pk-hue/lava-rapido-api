@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LavagemService {
     private CarroRepository carroRepository;
     private LavagemRepository lavagemRepository;

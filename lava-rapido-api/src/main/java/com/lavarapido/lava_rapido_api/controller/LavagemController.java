@@ -25,4 +25,10 @@ public class LavagemController {
         Lavagem lavagem = lavagemService.cadastrar(carroId, tipoLavagem);
         return ResponseEntity.status(HttpStatus.CREATED).body(lavagem);
     }
+
+    @GetMapping
+    public ResponseEntity<List<Lavagem>> getLavagemById() {
+        List<Lavagem> lavagem = lavagemService.findBayId();
+        return ResponseEntity.status(HttpStatus.OK).body(lavagem);
+    }
 }

@@ -30,4 +30,6 @@ public class LavagemService {
         lavagem.setValor(tipo.getValor());
         return lavagemRepository.save(lavagem);
     }
+
+    public List<Lavagem> findBayId(){return lavagemRepository.findAll();}
 }

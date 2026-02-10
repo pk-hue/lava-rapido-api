@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -26,9 +28,19 @@ public class LavagemController {
         return ResponseEntity.status(HttpStatus.CREATED).body(lavagem);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Lavagem>> getLavagemById() {
-        List<Lavagem> lavagem = lavagemService.findBayId();
+    @GetMapping("/carro/{carroId}")
+    public ResponseEntity<List<Lavagem>> listarPorCarroId(@PathVariable Long carroId) {
+        List<Lavagem> lavagem = lavagemService.findByCarroIdOrderByDataHoraDesc(carroId);
         return ResponseEntity.status(HttpStatus.OK).body(lavagem);
+    }
+
+    @GetMapping("/faturamento")
+    public BigDecimal faturamento(@RequestParam LocalDate inicio, @RequestParam LocalDate fim) {
+        return lavagemService.faturamento(inicio, fim);
+    }
+
+    @GetMapping("faturamentoLiquido")
+    public BigDecimal faturamentoLiquido(@RequestParam LocalDate inicio, @RequestParam LocalDate fim) {
+        return lavagemService.faturamentoLiquido(inicio, fim);
     }
 }

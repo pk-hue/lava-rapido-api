@@ -123,3 +123,6 @@ Aqui ninguém está "mandando" — estamos **construindo juntos**.
 Se quiser contribuir, abra uma Issue ou entre em contato pelo GitHub.
 
 — Pedro H.
+
+
+

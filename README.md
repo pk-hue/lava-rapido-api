@@ -6,6 +6,7 @@ Este projeto **não é um exercício guiado**. Ele existe para ser construído e
 
 ---
 
+
 ## Objetivo do Projeto
 
 Criar uma API back-end que permita gerenciar um lava-rápido de forma realista, cobrindo:
